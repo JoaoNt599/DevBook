@@ -10,11 +10,8 @@ import (
 
 func main() {
 	config.Load()
-
-	fmt.Println(config.StringConnMysql)
-
-	fmt.Println("Hello World!")
 	r := router.Togenerate()
 
+	fmt.Printf("listen at the port: %d", config.ApiPort)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", config.ApiPort), r))
 }
