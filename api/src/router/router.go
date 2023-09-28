@@ -1,8 +1,14 @@
 package router
 
-import "github.com/gorilla/mux"
+import (
+	"api/src/router/routes"
+
+	"github.com/gorilla/mux"
+)
 
 // Togenerate will return a router with the configured routes
 func Togenerate() *mux.Router {
-	return mux.NewRouter()
+	r := mux.NewRouter()
+	routes.Setup(r)
+	return r
 }
